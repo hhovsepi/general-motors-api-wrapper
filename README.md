@@ -1,11 +1,17 @@
 ![example workflow](https://github.com/rzgry/Express-REST-API-Template/actions/workflows/node.js.yml/badge.svg)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-# Express-REST-API-Template
+# Smartcar | GM API Wrapper
 
-Simple express boilerplate based off of [express-generator](https://expressjs.com/en/starter/generator.html). Includes [eslint](https://eslint.org) and [prettier](https://prettier.io) for linting/code formatting, [nodemon](https://github.com/remy/nodemon) for automatic server restarting, and [Jest](https://jestjs.io) for testing.
+Simple Smartcar API wrapper for the GM API
 
 ## Getting Started
+
+### Clone the repository
+
+```
+https://github.com/hhovsepi/smartcar-gm-wrapper.git
+```
 
 ### Install dependencies
 
@@ -31,9 +37,6 @@ Runs on localhost:3000 by default but can be configured using the `PORT` environ
 
 ```
 npm test
-
-# Watch repo
-npm run test:watch
 ```
 
 ### Linting
@@ -43,3 +46,18 @@ npm run lint
 # fix issues
 npm run lint:fix
 ```
+
+# Technologies Used
+
+######
+| Technology | Description |
+| --------------- | --------- |
+| [Node.js](https://handlebarsjs.com/) | JS run-time environment that executes JS code outside of a browser |
+| [Express.js](https://expressjs.com/) | Node.js web application server framework |
+| [eslint](https://eslint.org/) | Linter utility for identifying and reporting on patterns in JS |
+| [Jest](https://jestjs.io/) | JS testing framework |
+| [Supertest](https://www.npmjs.com/package/supertest) | HTTP assertion library |
+| [Axios](https://www.npmjs.com/package/axios) | Promise based HTTP client for the browser and node.js |
+| [Prettier](https://prettier.io/) | Opinionated code formatter |
+| [Babel](https://babeljs.io/) | JS compiler |
+| [Nodemon](https://nodemon.io/) | Utility that will monitor for any changes in your source and automatically restart your server |
