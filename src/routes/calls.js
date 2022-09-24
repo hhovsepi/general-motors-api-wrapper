@@ -1,9 +1,6 @@
 import axios from 'axios';
 import httpAdapter from 'axios/lib/adapters/http.js';
 
-
-
-
 import { invalidVehicleIdError, noBatteryError, noFuelError, invalidActionError, shouldBeGetError, shouldBePostError, invalidRouteError }  from '../middleware/errorHandler.js';
 
 axios.defaults.adapter = httpAdapter;
@@ -124,28 +121,7 @@ export const startStopEngine = async (req, res) => {
   }
 };
 
-/**
- 
- router.all('*', (req, res) => {
-  const postRoutes = /\/vehicles\/\d+\/engine/;
-  const getRoutes = /\/vehicles\/\d+\/doors|\/vehicles\/\d+\/fuel|\/vehicles\/\d+\/battery|\/vehicles\/\d+/;
-
-  // ** Engine Start/Stop Must be POST ** //
-  if (req.path.match(postRoutes) && req.method !== 'POST') {
-    return res.status(405).json(shouldBePostError(req.method, req.path));
-  }
-
-  // ** All Other Routes Must be GET ** //
-  if (req.path.match(getRoutes) && req.method !== 'GET') {
-  return res.status(405).json(shouldBeGetError(req.method, req.path));
-  }
-
-  res.status(404).json(invalidRouteError(req.originalUrl));
-});
- 
- */
-
-// templatize error messages
+// ***** Invalid Route or Method ***** //
 export const invalidMethodOrRoute = (req, res) => {
   const postRoutes = /\/vehicles\/\d+\/engine/;
   const getRoutes = /\/vehicles\/\d+\/doors|\/vehicles\/\d+\/fuel|\/vehicles\/\d+\/battery|\/vehicles\/\d+/;
