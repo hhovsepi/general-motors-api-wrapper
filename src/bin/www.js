@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-const http = require('http');
-const app = require('../app');
+import { createServer } from 'http';
+// eslint-disable-next-line import/extensions
+import app from '../app.js';
 
 // Normalize a port into a number, string, or false.
 function normalizePort(val) {
@@ -25,7 +26,7 @@ const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 // Create the HTTP server
-const server = http.createServer(app);
+const server = createServer(app);
 
 function onError(error) {
   if (error.syscall !== 'listen') {

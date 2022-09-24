@@ -1,5 +1,15 @@
-const request = require('supertest');
-const app = require('../app');
+import request from 'supertest';
+import app from '../app';
+
+describe('GET /vehicles/:id', () => {
+  it('should return a 200 response', async () => {
+    const res = await request(app).get('/vehicles/1234');
+    expect(res.statusCode).toEqual(200);
+  });
+});
+
+// import request from 'supertest';
+// import app from '../app';
 
 describe('app', () => {
   it('should export the express app correctly', () => {

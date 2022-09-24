@@ -1,29 +1,44 @@
-const express = require('express');
-const createError = require('http-errors');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const helmet = require('helmet');
+/* eslint-disable import/extensions */
 
-const indexRouter = require('./routes/index');
+// TODO: 
+/*
 
-const errorHandler = require('./middleware/errorHandler');
+1. Finish error handling
+2. Finish tests
+3. Finish documentation
+4. Refactor code
+5. Add comments
+
+
+*/
+
+
+
+import express, { json, urlencoded } from 'express';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
+import helmet from 'helmet';
+
+
+import router from './routes/router.js';
 
 const app = express();
 
 app.use(helmet()); // https://expressjs.com/en/advanced/best-practice-security.html#use-helmet
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(logger('dev')); // will log requests to the console
+app.use(json()); // parses incoming requests with JSON payloads
+app.use(urlencoded({ extended: false })); // parses incoming requests with urlencoded payloads
+app.use(cookieParser()); // parses incoming requests with cookie payloads
 
-app.use('/', indexRouter);
+app.use('/', router);  // use the router for all requests
 
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-  next(createError.NotFound());
-});
 
 // pass any unhandled errors to the error handler
-app.use(errorHandler);
 
-module.exports = app;
+
+
+// catch 404 and forward to error handler
+
+
+// export the app
+export default app;
