@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 import { createServer } from 'http';
 // eslint-disable-next-line import/extensions
 import app from '../app.js';

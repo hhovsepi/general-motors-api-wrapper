@@ -5,5 +5,9 @@
     "node": true,
     "es6": true,
     "jest": true
+  },
+  "rules": {
+    "import/extensions": "off",
+    "require-await": "off",
   }
 }
