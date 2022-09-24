@@ -4,7 +4,7 @@
 # Smartcar | GM API Wrapper
 
 Simple Smartcar API wrapper for the GM API. Steps left:
-1. 1 error case to be handles
+1. 1 error case to be handled
 2. Documentation
 
 ## Getting Started
