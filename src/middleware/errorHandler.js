@@ -33,10 +33,10 @@ export const noVehicleIdError = (path) => createError(404, {
 });
 
 // ** Invalid Battery Error ** //
-export const noBatteryError = (id) => createError(404, {
+export const noBatteryError = (id) => createError(406, {
   'success': false,
   'error': {
-    'code': '404',
+    'code': '406',
     'type': 'NO_BATTERY',
     'info': `Vehicle ID ${id} does not use a battery. Path /battery is only valid for electric or hybrid vehicles. Did you mean /fuel?`,
   },
@@ -46,10 +46,10 @@ export const noBatteryError = (id) => createError(404, {
 });
 
 // ** Invalid Fuel Error ** //
-export const noFuelError = (id) => createError(404, {
+export const noFuelError = (id) => createError(406, {
   'success': false,
   'error': {
-    'code': '404',
+    'code': '406',
     'type': 'NO_FUEL',
     'info': `Vehicle ID ${id} does not use fuel. Path /fuel is only valid for gas or hybrid vehicles. Did you mean /battery?`,
   },
