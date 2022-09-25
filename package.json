@@ -22,7 +22,9 @@
     "http-errors": "^1.8.0",
     "morgan": "^1.10.0",
     "node-fetch": "^3.2.10",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.5.0"
   },
   "devDependencies": {
     "babel-jest": "^29.0.3",
@@ -38,7 +40,7 @@
   "jest": {
     "transform": {
       "^.+\\.[t|j]sx?$": "babel-jest"
-    } 
+    }
   },
   "nodemonConfig": {
     "ignore": [
