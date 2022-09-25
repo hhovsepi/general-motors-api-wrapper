@@ -12,7 +12,6 @@ export const invalidVehicleIdError = (id) => createError(404, {
     'type': 'INVALID_VEHICLE_ID',
     'info': `Vehicle ID ${id} is invalid, please check your vehicle ID and try again.`,
   },
-  'path': '/vehicles/:id',
   'timestamp': new Date().toISOString(),
   'possibleRoutes': possibleRoutes
 });
@@ -27,7 +26,6 @@ export const noVehicleIdError = (path) => createError(404, {
     'incompletePath': path,
     'examplePath': '/vehicles/1587',
   },
-  'path': '/vehicles/:id',
   'timestamp': new Date().toISOString(),
   'possibleRoutes': possibleRoutes
 });
@@ -40,7 +38,6 @@ export const noBatteryError = (id) => createError(406, {
     'type': 'NO_BATTERY',
     'info': `Vehicle ID ${id} does not use a battery. Path /battery is only valid for electric or hybrid vehicles. Did you mean /fuel?`,
   },
-  'path': '/vehicles/:id/battery',
   'timestamp': new Date().toISOString(),
   'possibleRoutes': possibleRoutes
 });
@@ -53,7 +50,6 @@ export const noFuelError = (id) => createError(406, {
     'type': 'NO_FUEL',
     'info': `Vehicle ID ${id} does not use fuel. Path /fuel is only valid for gas or hybrid vehicles. Did you mean /battery?`,
   },
-  'path': '/vehicles/:id/fuel',
   'timestamp': new Date().toISOString(),
   'possibleRoutes': possibleRoutes
 });
@@ -66,7 +62,6 @@ export const invalidActionError = (action) => createError(400, {
     'type': 'INVALID_ACTION',
     'info': `Action ${action} is invalid. Allowed actions are START and STOP for the /engine endpoint.`,
   },
-  'path': '/vehicles/:id/engine',
   'timestamp': new Date().toISOString(),
   'possibleRoutes': possibleRoutes
 });
@@ -79,7 +74,6 @@ export const invalidRouteError = (path) => createError(404, {
     'type': 'INVALID_ROUTE',
     'info': `Route ${path} is invalid. Please check your route and try again.`,
   },
-  'path': path,
   'timestamp': new Date().toISOString(),
   'possibleRoutes': possibleRoutes
 });
@@ -95,7 +89,6 @@ export const shouldBeGetError = (method, path) => createError(405, {
     'acceptableMethods': ['GET']
     // ?? I know that objects are not ordered in JS, so how can I make sure that invalidMethod and acceptableMethods are always in the same order?
   },
-  'path': path,
   'timestamp': new Date().toISOString(),
   'possibleRoutes': possibleRoutes
 });
@@ -111,7 +104,20 @@ export const shouldBePostError = (method, path) => createError(405, {
     'acceptableMethods': ['POST']
   },
   // ?? I know that objects are not ordered in JS, so how can I make sure that invalidMethod and acceptableMethods are always in the same order?
-  'path': path,
   'timestamp': new Date().toISOString(),
   'possibleRoutes': possibleRoutes
 });
+
+// ** API Specific Error ** //
+export const apiError = (endpoint) => createError(500, {
+  'success': false,
+  'error': {
+    'code': '500',
+    'type': 'API_ERROR',
+    'info': `There was an error with the API endpoint ${endpoint}. This has been logged and will be investigated. Please try again later or contact the API administrator.`,
+  },
+  'timestamp': new Date().toISOString(),
+  'possibleRoutes': possibleRoutes
+});
+
+

@@ -13,6 +13,7 @@ Simple Smartcar API wrapper for the GM API. Steps left:
 
 ```
 https://github.com/hhovsepi/smartcar-gm-wrapper.git
+cd smartcar-gm-wrapper
 ```
 
 ### Install dependencies

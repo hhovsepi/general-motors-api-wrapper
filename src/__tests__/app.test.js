@@ -81,7 +81,7 @@ describe('GET /vehicles/:id/fuel', () => {
     expect(response.body).toHaveProperty('error');
     expect(response.body.success).toBe(false);
   });
-  it('Car does not take fuel: Should return a 401 status code', async () => {
+  it('Car does not take fuel: Should return a 406 status code', async () => {
     const response = await request(app).get('/vehicles/1235/fuel');
     expect(response.statusCode).toBe(406);
     expect(response.body).toHaveProperty('error');
@@ -103,7 +103,7 @@ describe('GET /vehicles/:id/battery', () => {
     expect(response.body).toHaveProperty('error');
     expect(response.body.success).toBe(false);
   });
-  it('Car does not have battery: Should return a 401 status code', async () => {
+  it('Car does not have battery: Should return a 406 status code', async () => {
     const response = await request(app).get('/vehicles/1234/battery');
     expect(response.statusCode).toBe(406);
     expect(response.body).toHaveProperty('error');
@@ -173,3 +173,11 @@ describe('GET /vehicles/:id/engine', () => {
     expect(response.body.success).toBe(false);
   });
 });
+
+// timeout for async functions
+jest.setTimeout(30000);
+
+
+
+
+
