@@ -10,7 +10,7 @@ Simple Smartcar API wrapper for the GM API.
 ### Clone the repository
 
 ```
-https://github.com/hhovsepi/smartcar-gm-wrapper.git
+git clone https://github.com/hhovsepi/smartcar-gm-wrapper.git
 cd smartcar-gm-wrapper
 ```
 
