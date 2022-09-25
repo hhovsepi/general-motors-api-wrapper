@@ -60,7 +60,10 @@ npm run lint:fix
 | [eslint](https://eslint.org/) | Linter utility for identifying and reporting on patterns in JS |
 | [Jest](https://jestjs.io/) | JS testing framework |
 | [Supertest](https://www.npmjs.com/package/supertest) | HTTP assertion library |
+| [Swagger](https://swagger.io/) | API documentation tool |
 | [Axios](https://www.npmjs.com/package/axios) | Promise based HTTP client for the browser and node.js |
 | [Prettier](https://prettier.io/) | Opinionated code formatter |
 | [Babel](https://babeljs.io/) | JS compiler |
 | [Nodemon](https://nodemon.io/) | Utility that will monitor for any changes in your source and automatically restart your server |
+| [dotenv](https://www.npmjs.com/package/dotenv) | Loads environment variables from a .env file into process.env |
+| [morgan](https://www.npmjs.com/package/morgan) | HTTP request logger middleware for node.js |
