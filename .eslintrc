@@ -9,5 +9,6 @@
   "rules": {
     "import/extensions": "off",
     "require-await": "off",
+    "no-console": "off",
   }
 }
