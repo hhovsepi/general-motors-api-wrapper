@@ -14,6 +14,7 @@ git clone https://github.com/hhovsepi/smartcar-gm-wrapper.git
 cd smartcar-gm-wrapper
 ```
 
+
 ### Install dependencies
 
 ```
@@ -32,16 +33,17 @@ npm run dev
 npm start
 ```
 
-Runs on localhost:3000 by default but can be configured using the `PORT` environment variable.
+Runs on localhost:3000 by default but can be configured using the `PORT` environment variable in ```src/bin/www.js```
 
 
 ### View documentation
 
-Once you've started the server, navigate to /docs to view full documentation. 
+Once you've started the server, navigate to /docs to view the full documentation. You can call the API directly from the documentation.
 
 ```
 http://localhost:3000/docs
 ```
+![Screen Shot 2022-09-26 at 9 00 44 AM](https://user-images.githubusercontent.com/81712518/192325223-7e0181a9-4d21-4e2e-856f-c34c63ceb81a.png)
 
 ### Running tests
 
