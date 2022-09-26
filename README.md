@@ -5,6 +5,8 @@
 
 Simple Smartcar API wrapper for the GM API.
 
+If you use VSC, I would recommend installing the [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) extension
+
 ## Getting Started
 
 ### Clone the repository
