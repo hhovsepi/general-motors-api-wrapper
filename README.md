@@ -33,7 +33,7 @@ npm run dev
 npm start
 ```
 
-Runs on localhost:3000 by default but can be configured using the `PORT` environment variable in ```src/bin/www.js```
+Runs on localhost:3000 by default but can be configured using the `PORT` environment variable or manually in ```src/bin/www.js```
 
 
 ### View documentation
