@@ -80,7 +80,7 @@ router.post('/vehicles/:id/engine', async (req, res) => {
 
 // ***** Vehicle with no ID ***** //
 router.get('/vehicles', (req, res) => {
-  res.status(404).json(noVehicleIdError(req.path));
+  res.status(400).json(noVehicleIdError(req.path));
 });
 
 

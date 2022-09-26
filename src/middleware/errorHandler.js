@@ -1,10 +1,9 @@
-// const createError = require('http-errors'); change to import
 import createError from 'http-errors';
 
 const possibleRoutes = ['GET /vehicles/:id', 'GET /vehicles/:id/doors', 'GET /vehicles/:id/fuel', 'GET /vehicles/:id/battery', 'POST /vehicles/:id/engine'];
 
 
-// ** Vehicle ID Error ** //
+// ** Vehicle ID Error 404 ** //
 export const invalidVehicleIdError = (id) => createError(404, {
   'success': false,
   'error': {
@@ -16,8 +15,8 @@ export const invalidVehicleIdError = (id) => createError(404, {
   'possibleRoutes': possibleRoutes
 });
 
-// *** No Vehicle ID Provided Error *** //
-export const noVehicleIdError = (path) => createError(404, {
+// *** No Vehicle ID Provided Error 400 *** //
+export const noVehicleIdError = (path) => createError(400, {
   'success': false,
   'error': {
     'code': '404',
@@ -30,7 +29,7 @@ export const noVehicleIdError = (path) => createError(404, {
   'possibleRoutes': possibleRoutes
 });
 
-// ** Invalid Battery Error ** //
+// ** Invalid Battery Error 406 ** //
 export const noBatteryError = (id) => createError(406, {
   'success': false,
   'error': {
@@ -42,7 +41,7 @@ export const noBatteryError = (id) => createError(406, {
   'possibleRoutes': possibleRoutes
 });
 
-// ** Invalid Fuel Error ** //
+// ** Invalid Fuel Error 406 ** //
 export const noFuelError = (id) => createError(406, {
   'success': false,
   'error': {
@@ -54,7 +53,7 @@ export const noFuelError = (id) => createError(406, {
   'possibleRoutes': possibleRoutes
 });
 
-// ** Invalid Engine Action Error ** //
+// ** Invalid Engine Action Error 400 ** //
 export const invalidActionError = (action) => createError(400, {
   'success': false,
   'error': {
@@ -66,7 +65,7 @@ export const invalidActionError = (action) => createError(400, {
   'possibleRoutes': possibleRoutes
 });
 
-// ** Invalid Route Error ** //
+// ** Invalid Route Error 404 ** //
 export const invalidRouteError = (path) => createError(404, {
   'success': false,
   'error': {
@@ -78,7 +77,7 @@ export const invalidRouteError = (path) => createError(404, {
   'possibleRoutes': possibleRoutes
 });
 
-// ** Invalid Method - Must be GET ** //
+// ** Invalid Method - Must be GET 405 ** //
 export const shouldBeGetError = (method, path) => createError(405, {
   'success': false,
   'error': {
@@ -93,7 +92,7 @@ export const shouldBeGetError = (method, path) => createError(405, {
   'possibleRoutes': possibleRoutes
 });
 
-// ** Invalid Method - Must be POST ** //
+// ** Invalid Method - Must be POST 405 ** //
 export const shouldBePostError = (method, path) => createError(405, {
   'success': false,
   'error': {
@@ -108,7 +107,7 @@ export const shouldBePostError = (method, path) => createError(405, {
   'possibleRoutes': possibleRoutes
 });
 
-// ** API Specific Error ** //
+// ** API Specific Error 500 ** //
 export const apiError = (endpoint) => createError(500, {
   'success': false,
   'error': {

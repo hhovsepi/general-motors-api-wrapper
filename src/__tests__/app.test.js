@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', router);
 
+// ** Welcome route should return a 200 status code and a welcome message ** //
 describe('GET /', () => {
   it('should return a 200 status code & welcome message', async () => {
     const response = await request(app).get('/');
@@ -19,10 +20,11 @@ describe('GET /', () => {
   });
 });
 
+// ** /vehicle with no id should return a 400 status code and an error message ** //
 describe('GET /vehicles', () => {
-  it('No Vehicle ID: Should return a 404 status code', async () => {
+  it('No Vehicle ID: Should return a 400 status code', async () => {
     const response = await request(app).get('/vehicles');
-    expect(response.statusCode).toBe(404);
+    expect(response.statusCode).toBe(400);
     expect(response.body).toHaveProperty('error');
     expect(response.body.success).toBe(false);
   });
@@ -114,15 +116,17 @@ describe('GET /vehicles/:id/battery', () => {
 });
 
 describe('POST /vehicles/:id/engine', () => {
-  it('Should start the engine or fail', async () => {
+  it('Should start the engine or run recursively until success', async () => {
     const response = await request(app).post('/vehicles/1234/engine').send({ action: 'START' });
     expect(response.statusCode).toBe(200);
     expect(response.body).toHaveProperty('status');
+    expect(response.body.status).toBe('EXECUTED');
   });
-  it('Should stop the engine or fail', async () => {
+  it('Should stop the engine or run recursively until success', async () => {
     const response = await request(app).post('/vehicles/1234/engine').send({ action: 'STOP' });
     expect(response.statusCode).toBe(200);
     expect(response.body).toHaveProperty('status');
+    expect(response.body.status).toBe('EXECUTED');
   });
   it('Invalid Vehicle ID: Should return a 404 status code', async () => {
     const response = await request(app).post('/vehicles/12345/engine').send({ action: 'START' });
