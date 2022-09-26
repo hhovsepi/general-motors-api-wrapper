@@ -26,10 +26,12 @@ const swaggerOptions = {
     openapi: '3.0.0',
     info: {
       title: 'Smartcar API Wrapper for GM',
-      description: 'Documentation for the Smartcar API Wrapper for GM',
+      description: 'Welcome to the Smartcar API Wrapper for GM. This API allows you to access vehicle data from GM vehicles with a given GM vehicle ID.',
       contact: {
-        name: 'Awesome Developer'
+        name: 'Haig Hovsepian',
+        email: 'hhovsepi@gmail.com',
       },
+      version: '1.0.0',
       servers: ['http://localhost:3000'],
     }
   },
