@@ -474,4 +474,38 @@
  *                   type: array
  *                   items:
  *                     type: string
+ *       '400':
+ *         description: invalid action provided
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   default: Bad Request
+ *                 success:
+ *                   type: boolean
+ *                   default: false
+ *                 error:
+ *                   type: object
+ *                   properties:
+ *                     code:
+ *                       type: integer
+ *                       default: 400
+ *                       description: invalid action provided
+ *                     info:
+ *                       type: string
+ *                       default: action GO FAST GO FURIOUS is an invalid action. Allowed actions are START and STOP for the /engine endpoint.
+ *                     type:
+ *                       type: string
+ *                       default: INVALID_ACTION
+ *                 timestamp:
+ *                   type: string
+ *                   default: 2021-03-01T00:00:00.000Z
+ *                   description: The timestamp of the request
+ *                 possibleRoutes:
+ *                   type: array
+ *                   items:
+ *                     type: string
  */

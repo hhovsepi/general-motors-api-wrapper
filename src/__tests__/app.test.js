@@ -135,7 +135,7 @@ describe('POST /vehicles/:id/engine', () => {
     expect(response.body.success).toBe(false);
   });
   it('Invalid Action: Should return a 400 status code', async () => {
-    const response = await request(app).post('/vehicles/1234/engine').send({ action: 'STARTS' });
+    const response = await request(app).post('/vehicles/1234/engine').send({ action: 'GO FAST GO FURIOUS' });
     expect(response.statusCode).toBe(400);
     expect(response.body).toHaveProperty('error');
     expect(response.body.success).toBe(false);
