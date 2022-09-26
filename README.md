@@ -40,7 +40,7 @@ Runs on localhost:3000 by default but can be configured using the `PORT` environ
 Once you've started the server, navigate to /docs to view full documentation. 
 
 ```
-http:local host:3000/docs
+http://localhost:3000/docs
 ```
 
 ### Running tests
