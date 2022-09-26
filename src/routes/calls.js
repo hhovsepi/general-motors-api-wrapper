@@ -164,13 +164,3 @@ export const invalidMethodOrRoute = (req, res) => {
 };
 
 
-export default {
-  getVehicleInfo,
-  getSecurityStatus,
-  getFuelRange,
-  getBatteryRange,
-  startStopEngine,
-  invalidMethodOrRoute
-};
-
-
