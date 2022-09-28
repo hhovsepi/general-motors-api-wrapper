@@ -19,7 +19,7 @@ export const invalidVehicleIdError = (id) => createError(404, {
 export const noVehicleIdError = (path) => createError(400, {
   'success': false,
   'error': {
-    'code': '404',
+    'code': '400',
     'type': 'NO_VEHICLE_ID',
     'info': 'No vehicle ID was provided, please provide a vehicle ID and try again.',
     'incompletePath': path,
@@ -91,7 +91,7 @@ export const shouldBeGetError = (method, path) => createError(405, {
   'timestamp': new Date().toISOString(),
   'possibleRoutes': possibleRoutes
 });
-
+// ?? ↑↓ NOTE: In retrospect, I could have only used one function for 405 errors and passed in an additional parameter for the correct method.
 // ** Invalid Method - Must be POST 405 ** //
 export const shouldBePostError = (method, path) => createError(405, {
   'success': false,
